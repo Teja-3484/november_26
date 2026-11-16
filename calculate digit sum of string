@@ -1,0 +1,22 @@
+class Solution:
+    def digitSum(self, s: str, k: int) -> str:
+
+        while len(s) > k:
+            a = []
+            ans = ""
+
+            for i in range(0, len(s), k):
+                a.append(s[i:i+k])
+
+            for i in range(len(a)):
+                first = a[i]
+                Sum = 0
+
+                for j in first:
+                    Sum += int(j)
+
+                ans += str(Sum)
+
+            s = ans
+
+        return s
